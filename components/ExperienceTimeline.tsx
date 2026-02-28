@@ -20,7 +20,7 @@ export default function ExperienceTimeline() {
             <div className="absolute left-[-5px] top-2 w-2 h-2 bg-primary rounded-full group-hover:scale-150 group-hover:bg-secondary transition-all duration-300 shadow-[0_0_10px_rgba(139,92,246,0.6)]" />
 
             {/* Content Card */}
-            <div className="p-6 md:p-8 rounded-[2rem] bg-white/5 border border-transparent backdrop-blur-md transition-all duration-300 group-hover:bg-white/10 group-hover:border-white/10">
+            <div className="p-6 md:p-8 rounded-4xl bg-white/5 border border-transparent backdrop-blur-md transition-all duration-300 group-hover:bg-white/10 group-hover:border-white/10">
               <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
                 <div>
                   <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors">

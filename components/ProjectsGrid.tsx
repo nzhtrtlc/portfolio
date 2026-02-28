@@ -16,10 +16,10 @@ export default function ProjectsGrid() {
         {projects.map((project) => (
           <div
             key={project.name}
-            className="flex flex-col p-6 md:p-8 rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur-md group hover:bg-white/10 transition-all duration-300 relative overflow-hidden h-full"
+            className="flex flex-col p-6 md:p-8 rounded-4xl bg-white/5 border border-white/10 backdrop-blur-md group hover:bg-white/10 transition-all duration-300 relative overflow-hidden h-full"
           >
             {/* Subtle Gradient Hover */}
-            <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-linear-to-br from-secondary/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             <div className="relative z-10 flex flex-col h-full">
               <div className="flex items-start justify-between mb-4">

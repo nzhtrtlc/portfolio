@@ -6,12 +6,12 @@ export default function Sidebar() {
   return (
     <aside className="lg:sticky lg:top-8 flex flex-col gap-6 w-full lg:w-[320px] xl:w-[380px] shrink-0">
       {/* Profile Card */}
-      <div className="flex flex-col p-8 rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl relative overflow-hidden group">
+      <div className="flex flex-col p-8 rounded-4xl bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl relative overflow-hidden group">
         {/* Subtle hover gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
         {/* Image / Avatar Placeholder */}
-        <div className="w-32 h-32 rounded-full mb-6 mx-auto overflow-hidden border-4 border-white/10 bg-gradient-to-tr from-primary/20 to-secondary/20 flex items-center justify-center relative z-10">
+        <div className="w-32 h-32 rounded-full mb-6 mx-auto overflow-hidden border-4 border-white/10 bg-linear-to-tr from-primary/20 to-secondary/20 flex items-center justify-center relative z-10">
           {/* Replace with next/image when available */}
           <span className="text-4xl font-heading font-bold text-white/50">
             NT

@@ -42,7 +42,7 @@ export default function SkillsBento() {
         {categories.map((category) => (
           <div
             key={category.title}
-            className={`p-6 md:p-8 rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur-md flex flex-col hover:bg-white/10 transition-colors ${category.style}`}
+            className={`p-6 md:p-8 rounded-4xl bg-white/5 border border-white/10 backdrop-blur-md flex flex-col hover:bg-white/10 transition-colors ${category.style}`}
           >
             {category.icon}
             <h3 className="text-xl font-bold text-white mb-4">
