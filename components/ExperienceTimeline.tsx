@@ -17,7 +17,7 @@ export default function ExperienceTimeline() {
             className="bento-card relative flex flex-col mb-12 last:mb-0 pl-8 group"
           >
             {/* Timeline dot */}
-            <div className="absolute left-[-5px] top-2 w-2 h-2 bg-primary rounded-full group-hover:scale-150 group-hover:bg-secondary transition-all duration-300 shadow-[0_0_10px_rgba(139,92,246,0.6)]" />
+            <div className="absolute left-[-5px] top-2 w-2 h-2 bg-secondary rounded-full group-hover:scale-150 group-hover:bg-primary transition-all duration-300 shadow-[0_0_10px_rgba(139,92,246,0.6)]" />
 
             {/* Content Card */}
             <div className="p-6 md:p-8 rounded-4xl bg-white/5 border border-transparent backdrop-blur-md transition-all duration-300 group-hover:bg-white/10 group-hover:border-white/10">
@@ -30,7 +30,7 @@ export default function ExperienceTimeline() {
                     {exp.company}
                   </h4>
                 </div>
-                <div className="text-xs md:text-sm font-medium text-white/40 bg-white/5 px-3 py-1 rounded-full w-fit">
+                <div className="text-xs md:text-sm font-medium text-white/40 bg-white/5 px-3 py-1 rounded-full w-fit group-hover:text-primary">
                   {exp.period} • {exp.location}
                 </div>
               </div>
