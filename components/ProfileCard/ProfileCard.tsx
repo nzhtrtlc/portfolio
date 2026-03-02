@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail, MapPin } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { personalInfo } from "@/lib/data";
 import GlassCard from "../ui/GlassCard";
@@ -30,9 +31,7 @@ export default function ProfileCard() {
         {/* Image / Avatar Placeholder */}
         <div className="w-32 h-32 rounded-full mb-6 mx-auto overflow-hidden border-4 border-white/10 bg-linear-to-tr from-primary/20 to-secondary/20 flex items-center justify-center relative z-10">
           {/* Replace with next/image when available */}
-          <span className="text-4xl font-heading font-bold text-white/50">
-            NT
-          </span>
+          <Image src="/pp_nw.png" alt="Profile" width={128} height={128} />
         </div>
 
         <div className="text-center relative z-10 flex flex-col items-center">
