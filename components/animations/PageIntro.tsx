@@ -23,8 +23,6 @@ export default function PageIntro() {
         },
       );
 
-      // 2. Bento Cards Scroll Reveal
-      // We assume elements with class 'bento-card' should stagger reveal
       const bentoCards = gsap.utils.toArray<HTMLElement>(".bento-card");
       if (bentoCards.length > 0) {
         gsap.fromTo(

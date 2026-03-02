@@ -1,12 +1,29 @@
 import { Github, Linkedin, Mail, MapPin } from "lucide-react";
 import Link from "next/link";
 import { personalInfo } from "@/lib/data";
+import GlassCard from "../ui/GlassCard";
+import { ReadMore } from "./ReadMore";
 
-export default function Sidebar() {
+export default function ProfileCard() {
+  const socialLinks = [
+    {
+      icon: Github,
+      href: personalInfo.github,
+    },
+    {
+      icon: Linkedin,
+      href: personalInfo.linkedin,
+    },
+    {
+      icon: Mail,
+      href: `mailto:${personalInfo.email}`,
+    },
+  ];
+
   return (
     <aside className="lg:sticky lg:top-8 flex flex-col gap-6 w-full lg:w-[320px] xl:w-[380px] shrink-0">
       {/* Profile Card */}
-      <div className="flex flex-col p-8 rounded-4xl bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl relative overflow-hidden group">
+      <GlassCard className="flex flex-col shadow-2xl relative overflow-hidden group">
         {/* Subtle hover gradient */}
         <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -26,8 +43,8 @@ export default function Sidebar() {
             {personalInfo.role}
           </p>
 
-          <p className="text-muted-foreground text-sm leading-relaxed mb-8">
-            {personalInfo.summary}
+          <p className="text-muted-foreground text-sm leading-relaxed mb-8 whitespace-pre-wrap">
+            <ReadMore maxLength={200}>{personalInfo.summary}</ReadMore>
           </p>
 
           {/* Contact / Location */}
@@ -38,35 +55,19 @@ export default function Sidebar() {
 
           {/* Social Links */}
           <div className="grid grid-cols-3 gap-3 w-full">
-            <Link
-              href={`https://${personalInfo.github}`}
-              target="_blank"
-              className="flex items-center justify-center p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:text-white transition-colors text-muted-foreground"
-            >
-              <Github size={20} />
-            </Link>
-            <Link
-              href={`https://${personalInfo.linkedin}`}
-              target="_blank"
-              className="flex items-center justify-center p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:text-white transition-colors text-muted-foreground"
-            >
-              <Linkedin size={20} />
-            </Link>
-            <Link
-              href={`mailto:${personalInfo.email}`}
-              className="flex items-center justify-center p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:text-white transition-colors text-muted-foreground"
-            >
-              <Mail size={20} />
-            </Link>
+            {socialLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                className="flex items-center justify-center p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:text-white transition-colors text-muted-foreground"
+              >
+                <link.icon size={20} />
+              </Link>
+            ))}
           </div>
         </div>
-      </div>
-
-      {/* Footer in Sidebar for Desktop */}
-      <div className="hidden lg:flex flex-col items-center text-center text-xs text-muted-foreground/60 p-4">
-        <p>© {new Date().getFullYear()} Nezih Tartilaci.</p>
-        <p>Crafted with Next.js & GSAP.</p>
-      </div>
+      </GlassCard>
     </aside>
   );
 }

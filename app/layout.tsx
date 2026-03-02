@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit, Syne } from "next/font/google";
 import "./globals.css";
-import SmoothScroll from "@/components/SmoothScroll";
+import SmoothScroll from "@/components/ui/SmoothScroll";
 
 const syne = Syne({
   variable: "--font-syne",
