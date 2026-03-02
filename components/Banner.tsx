@@ -19,7 +19,6 @@ export default function Banner() {
         </h1>
       </div>
 
-      {/* Stats/Highlight Box 1 */}
       <GlassCard className="bento-card p-8 bg-linear-to-br from-primary/10 to-primary/5 flex flex-col justify-between min-h-[200px] hover:scale-[1.02] transition-transform duration-300">
         <span className="text-muted-foreground font-medium mb-4">
           Experience
@@ -32,7 +31,6 @@ export default function Banner() {
         </div>
       </GlassCard>
 
-      {/* Stats/Highlight Box 2 */}
       <GlassCard className="bento-card p-8 bg-linear-to-br from-secondary/10 to-secondary/5 flex flex-col justify-between min-h-[200px] hover:scale-[1.02] transition-transform duration-300">
         <span className="text-muted-foreground font-medium mb-4">Focus</span>
         <div>
@@ -45,13 +43,12 @@ export default function Banner() {
         </div>
       </GlassCard>
 
-      {/* Stats/Highlight Box 3 */}
       <GlassCard className="md:col-span-2 lg:col-span-1 bento-card p-8 bg-white/5 flex flex-col justify-between min-h-[200px] hover:scale-[1.02] transition-transform duration-300">
         <span className="text-muted-foreground font-medium mb-4">Resume</span>
-        <button
-          type="button"
+        <a
+          href="/resume.pdf"
+          download
           className="group/btn mt-auto flex items-center justify-between px-6 py-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 w-full cursor-pointer"
-          onClick={() => alert("Resume PDF link will be provided soon!")}
         >
           <span className="text-lg font-bold text-white group-hover/btn:text-primary transition-colors">
             Download CV
@@ -60,7 +57,7 @@ export default function Banner() {
             size={20}
             className="text-white/50 group-hover/btn:text-primary group-hover/btn:-translate-y-0.5 transition-all duration-300"
           />
-        </button>
+        </a>
       </GlassCard>
     </section>
   );
