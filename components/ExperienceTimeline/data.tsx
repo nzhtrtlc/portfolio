@@ -22,22 +22,64 @@ const Entry = ({ title, content }: { title: string; content: ReactNode }) => (
 
 export const experience: ExperienceEntry[] = [
   {
-    company: "Hoobe LLC",
-    role: "Fullstack Engineer / Founder",
-    period: "Nov 2024 – Present",
-    location: "Remote, TR, USA",
-    description: `At plan0.ai, we're building an AI-powered construction cost estimation platform that helps contractors and developers estimate project costs quickly and accurately. We're using the latest technologies to create a seamless and intuitive user experience. I worked on 4 different projects.`,
+    company: "plan0.ai",
+    role: "Fullstack Engineer",
+    period: "Apr 2025 – Present",
+    location: "Remote",
+    description: `plan0.ai is building an AI-powered construction cost estimation platform that helps contractors and developers predict project costs quickly and accurately. I work across the full stack — shipping product features, ML pipelines, and the production AWS infrastructure underneath.`,
     details: (
       <section>
         <Entry
-          title="plan0.ai Website"
+          title="Construction Cost Analytics Platform"
+          content="An AI-powered benchmarking tool that extracts metadata from estimate files and predicts trade unit rates against 400+ historical projects. I orchestrated multi-step Python ML pipelines from a Node.js backend with structured JSON parsing and resilient error recovery, and built a real-time progress stream so the frontend has live visibility into long-running ML jobs. Designed a multi-output regression pipeline predicting 86 unit-rate fields per project with cross-validation. Integrated PostgreSQL via Prisma (Node) and SQLAlchemy (Python) with a CSV fallback, and rendered results as interactive Plotly visualizations."
+        />
+        <Entry
+          title="Construction Estimation App (Costimate)"
+          content="The flagship product — a large-scale collaborative SPA for construction site planning with 3D GIS, canvas-based design tools, and real-time multi-user editing. I delivered features across the full stack: interactive canvas (Konva, Fabric), 3D GIS (CesiumJS), and Redux Toolkit on the frontend; real-time collaboration on Socket.io with authenticated rooms on the Node.js backend; and AWS S3 uploads, image processing, background job workers, and the Anthropic SDK integrated for cost-estimation intelligence."
+        />
+        <Entry
+          title="AWS Cloud Infrastructure (IaC)"
+          content="Designed and shipped the production AWS environment for Costimate and adjacent services, fully codified in Terraform and Terragrunt across staging and production. Architected a containerized environment on ECS Fargate (4 services behind an ALB) running across multiple availability zones for high availability. Provisioned managed PostgreSQL on RDS with multi-AZ HA and centralized secret management via AWS Secrets Manager. Built CI/CD pipelines with GitHub Actions using OIDC-based keyless deployments — replacing static IAM credentials with short-lived, scoped access. Authored reusable Terragrunt modules covering ECS, RDS, S3, CloudFront, IAM, and CloudWatch, mirrored cleanly across staging and production."
+        />
+      </section>
+    ),
+    technologies: [
+      "React",
+      "NextJS",
+      "TypeScript",
+      "NodeJS",
+      "Python",
+      "PostgreSQL",
+      "Prisma",
+      "Socket.io",
+      "Redux Toolkit",
+      "TailwindCSS",
+      "AWS",
+      "Docker",
+      "Terraform",
+      "Terragrunt",
+      "GitHub Actions",
+    ],
+  },
+  {
+    company: "Hoobe LLC",
+    role: "Fullstack Engineer / Founder",
+    period: "Nov 2024 – Apr 2025",
+    location: "Remote, TR, USA",
+    description: `I founded Hoobe LLC and delivered two contract engagements as a fullstack engineer — plan0.ai (a US-based AI construction estimation startup) and Retcat (an AI-powered hotel reservation automation platform).`,
+    details: (
+      <section>
+        <Entry
+          title="plan0.ai — Marketing Website"
           content={
             <>
-              Built company website using Next.js, TypeScript, TailwindCSS and
-              GSAP. Created scroll trigger animations, and implemented a 3D
-              construction model using three.js
-              <br />
-              Served on AWS CloudFront S3 Bucket.
+              A public-facing site for plan0.ai with cinematic scroll
+              storytelling, animated SVG visualizations, and an interactive 3D
+              building model. I engineered scroll-driven storytelling with GSAP
+              (ScrollTrigger, ScrollSmoother, SplitText) and a global
+              scroll-progress indicator, rendered an interactive 3D building
+              model with Three.js / react-three-fiber, and statically built and
+              globally distributed the site via AWS S3 + CloudFront.
               <a
                 href="https://plan0.ai"
                 target="_blank"
@@ -50,19 +92,12 @@ export const experience: ExperienceEntry[] = [
           }
         />
         <Entry
-          title="Proposal Generator"
-          content={`
-          I have built a proposal generator which generates a docx file based on
-          the user's input and from a initial template. I created a React app
-          for the frontend, there is a form for the user. In this form user can
-          upload a pdf file and we excract an address from it using gemini api.
-          I created the backend endpoints using nodejs. And there is an address
-          input, I have implemented autocomplete using Google Places API
-          integrated with my backend edpoint. When all inputs filled user clicks
-          generate button and it generated a docx file filled with dynamic data
-          user provided inside backend server then returns a blob to the
-          frontend and automatically downloads.
-          `}
+          title="plan0.ai — Proposal Document Generator"
+          content="An internal tool that automates professional .docx consulting proposals from PDF tender inputs and a structured staff/bio registry. I integrated Google Gemini with structured JSON output to extract project addresses from uploaded PDFs, and built a Docxtemplater + PizZip rendering pipeline supporting conditional sections and inline signature images. Implemented Google Places autocomplete and a PostgreSQL-backed staff/bio registry grouped by division. Architected as a TypeScript monorepo (Express 5 API + React/Vite frontend) with shared types across packages."
+        />
+        <Entry
+          title="Retcat — Hotel Reservation Automation"
+          content="A SaaS platform that automates hotel PMS data entry by processing inbound agency reservation emails end-to-end, eliminating manual work for hotel staff. I engineered a real-time email listener with allowlist filtering, PDF parsing, and an AI service for structured reservation extraction. Designed full Elektra PMS integration with live price fetching, reservation creation, and JWT auto-refresh on token expiry."
         />
       </section>
     ),
@@ -71,11 +106,14 @@ export const experience: ExperienceEntry[] = [
       "NextJS",
       "TypeScript",
       "NodeJS",
-      "Python",
+      "Express",
       "PostgreSQL",
+      "Prisma",
+      "GSAP",
+      "Three.js",
       "TailwindCSS",
       "AWS",
-      "Three.js",
+      "Docker",
     ],
   },
   {
@@ -83,9 +121,15 @@ export const experience: ExperienceEntry[] = [
     role: "Software Engineer",
     period: "Dec 2023 – Oct 2024",
     location: "Remote, TR",
-    description: `Craftgate is a One-Stop Shop Payment Orchestration Platform. I worked on frontend development across products, improving accessibility and performance. Delivered features on new website with Next.js and optimized customer panel load time by 40%. 
-      Engineered company Design System with React, Storybook, TypeScript and Tailwind.`,
-    technologies: ["React", "NextJS", "TypeScript", "TailwindCSS", "Storybook"],
+    description: `Craftgate is a One-Stop Shop Payment Orchestration Platform. I led frontend development across multiple products, driving accessibility, usability, and performance improvements. Built and maintained the company website with Next.js — improving SEO and page load performance. Optimized the customer panel with React, reducing load time by 40% under high daily usage. Implemented Cypress component and e2e tests, modernized the build configuration, and resolved vulnerable dependency chains. Initiated and architected an internal Design System as a private npm package using Storybook, Tailwind, TypeScript, and React.`,
+    technologies: [
+      "React",
+      "NextJS",
+      "TypeScript",
+      "TailwindCSS",
+      "Storybook",
+      "Cypress",
+    ],
   },
   {
     company: "Confidential Client",
@@ -93,7 +137,7 @@ export const experience: ExperienceEntry[] = [
     period: "May 2023 – Aug 2023",
     location: "Remote, TR/GER",
     description:
-      "Led Vue 2 to Vue 3 migration. Architected maintainable frontend with Vite and TypeScript, establishing modern dev toolchains (Prettier, ESLint, CI hooks).",
+      "Led the Vue 2 → Vue 3 migration for mission-critical features, improving performance and developer experience. Established a modern dev toolchain (Prettier, ESLint, testing, CI hooks) and architected a maintainable frontend with Vue 3, Vite, and TypeScript. Mentored engineers and conducted PR reviews to raise overall code quality.",
     technologies: ["Vue 2", "Vue 3", "Vite", "TypeScript", "ESLint"],
   },
   {
@@ -102,20 +146,20 @@ export const experience: ExperienceEntry[] = [
     period: "Sep 2021 – Feb 2023",
     location: "Remote, USA",
     description: `Toptal is an exclusive network of top software developers, designers, marketing experts, management consultants, and product managers. Top companies hire Toptal talent for their most critical projects.
-    Worked as a Frontend Engineer for Toptal's Client Portal team`,
+    I worked as a Frontend Engineer on Toptal's Client Portal team.`,
     details: (
       <section>
         <Entry
           title="Client Portal"
-          content="Core contributor to the Client Portal team, building with React, TypeScript, and Apollo GraphQL. Migrated 100+ Enzyme tests to React Testing Library, achieving over 85% coverage. Developed client-facing UI screens and new features across the product."
+          content="Core contributor on the Client Portal team — one of Toptal's primary product domains. Built client-facing features with React, TypeScript, and Apollo GraphQL. Migrated 100+ Enzyme tests to React Testing Library, increasing coverage to 85%. Drove code quality through 100+ PR reviews per quarter and mentored teammates on testing best practices."
         />
         <Entry
           title="Monorepo Migration"
-          content="Initiated a monorepo migration to reduce dependency conflicts across projects."
+          content="Initiated a monorepo migration, reducing cross-project dependency conflicts by 30%."
         />
         <Entry
-          title="Staff Panel Micro-frontend"
-          content="Contributed to the internal Staff Panel micro-frontend, gaining hands-on experience with micro-frontend architecture."
+          title="Staff Portal Micro-frontend"
+          content="Contributed to Staff Portal — a large-scale micro-frontend architecture — collaborating across squads on modular, scalable delivery."
         />
       </section>
     ),
@@ -134,21 +178,15 @@ export const experience: ExperienceEntry[] = [
     period: "Mar 2021 – Sep 2021",
     location: "Remote, TR",
     description: `Segmentify is a plug & play SaaS solution for online retailers to boost sales with personalised product recommendations.
-      In my first month, I modernized a React app which had legacy class components. I converted them to functional components using React Hooks in Client Panel using React, Redux, ES6+. 
-      Lowered technical debt and expedited team delivery cadence.
-      Implemented unit testing and e2e testing using cypress`,
-    technologies: ["React", "Redux", "ECMAScript", "Unit Testing", "Cypress"],
+      In my first month I modernized a React app with legacy class components, converting them to functional components using React Hooks across the Client Panel (React, Redux, ES6+). Lowered technical debt, expedited team delivery cadence, and implemented unit and end-to-end testing with Cypress.`,
+    technologies: ["React", "Redux", "Javascript", "Unit Testing", "Cypress"],
   },
   {
     company: "Cloud Nesil",
     role: "Fullstack Developer",
     period: "Sep 2018 – Mar 2021",
     location: "On-site",
-    description: `In this company I have worked several projects and many of our clients were international.
-      I have developed backend services (NestJS, TypeORM) and frontends (React, Redux). 
-      Containerized services with Docker + Jenkins.
-      I Lead/Supported juniors/new grads for their first professional experiences.
-      `,
+    description: `Across multiple projects with international clients, I developed backend services with NestJS, TypeORM, and PostgreSQL, and frontends with React, Redux, and React Query. Containerized services with Docker, set up Jenkins CI/CD pipelines, and automated end-to-end test flows. Led and supported juniors and new grads through their first professional roles.`,
     technologies: [
       "React",
       "Redux",
@@ -198,7 +236,7 @@ export const experience: ExperienceEntry[] = [
     period: "Oct 2017 – Jul 2018",
     location: "Remote, UK",
     description:
-      "This was a small startup founded in UK, London. I was the founding engineer and I created company website and the main product; frontend and backend.",
+      "Founding engineer at a small UK startup. I built the company website and the main product end-to-end — both frontend and backend.",
     technologies: [
       "NodeJS",
       "MongoDB",
@@ -222,7 +260,7 @@ export const experience: ExperienceEntry[] = [
     period: "Sep 2014 – Sep 2016",
     location: "On-site",
     description:
-      "Setrow is my first professional company I worked at. I have built customer-facing tools (Smart Pop-ups, Loyalty Scripts) with PHP/MySQL. Handled high-volume datasets via RabbitMQ and Redis. Configured our Linux servers.",
+      "Setrow is the first professional company I worked at. I built customer-facing tools (Smart Pop-ups, Loyalty Scripts) with PHP/MySQL, handled high-volume datasets via RabbitMQ and Redis, and configured our Linux servers.",
     technologies: [
       "PHP",
       "MySQL",

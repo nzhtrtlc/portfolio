@@ -13,11 +13,13 @@ export type Tech =
   | "Vue 2"
   | "Vue 3"
   | "Redux"
+  | "Redux Toolkit"
   | "Zustand"
   | "React Query"
   | "Apollo"
   | "GSAP"
   | "Three.js"
+  | "Socket.io"
   // Markup & Styling
   | "HTML5"
   | "CSS"
@@ -61,6 +63,8 @@ export type Tech =
   | "Docker"
   | "Jenkins"
   | "GitHub Actions"
+  | "Terraform"
+  | "Terragrunt"
   | "Git"
   | "Linux"
   // Architecture & Patterns
